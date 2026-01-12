@@ -71,8 +71,7 @@ namespace comm_handler
             }
             case 0x2:
             {
-                //memory_manager::read_physical(data->pid, data->size, data->address, data->ubuffer);
-                crt::memcpy(data->ubuffer, data->address, data->size);
+                memory_manager::read_physical(data->pid, data->size, data->address, data->ubuffer);
                 break;
             }
             case 0x3:
@@ -115,4 +114,5 @@ namespace comm_handler
         return true;
     }
 }
+
 #endif COMM_HANDLER_H
